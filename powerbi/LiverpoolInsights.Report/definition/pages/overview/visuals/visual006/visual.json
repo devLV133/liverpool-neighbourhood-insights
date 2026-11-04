@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "visual006",
+  "position": {
+    "x": 25,
+    "y": 215,
+    "z": 6,
+    "width": 1230,
+    "height": 180,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Published benchmarks (each indicator uses its own denominator)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#15333B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmarks"
+                    }
+                  },
+                  "Property": "area_name"
+                }
+              },
+              "queryRef": "Benchmarks.area_name",
+              "nativeQueryRef": "area_name",
+              "displayName": "area name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmarks"
+                    }
+                  },
+                  "Property": "population"
+                }
+              },
+              "queryRef": "Benchmarks.population",
+              "nativeQueryRef": "population",
+              "displayName": "population"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmarks"
+                    }
+                  },
+                  "Property": "aged_65_share"
+                }
+              },
+              "queryRef": "Benchmarks.aged_65_share",
+              "nativeQueryRef": "aged_65_share",
+              "displayName": "aged 65 share"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmarks"
+                    }
+                  },
+                  "Property": "social_rented_share"
+                }
+              },
+              "queryRef": "Benchmarks.social_rented_share",
+              "nativeQueryRef": "social_rented_share",
+              "displayName": "social rented share"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmarks"
+                    }
+                  },
+                  "Property": "employed_share"
+                }
+              },
+              "queryRef": "Benchmarks.employed_share",
+              "nativeQueryRef": "employed_share",
+              "displayName": "employed share"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "liverpool-neighbourhood-insights",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Development-only DOM checks for the offline analytical report",
+  "scripts": {"test": "node tests/test_report.cjs"},
+  "devDependencies": {"jsdom": "26.1.0"}
+}

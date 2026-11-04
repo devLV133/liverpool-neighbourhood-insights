@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "matched_areas": 61,
+  "checks": [
+    "Snapshot SHA-256",
+    "Unique area keys",
+    "2021 dates",
+    "Exact source / boundary coverage",
+    "Consistent area names",
+    "Non-negative integer counts",
+    "Positive denominators",
+    "Numerators within denominators"
+  ],
+  "reconciliation_note": "Published city counts and sums of small areas can differ because of Census disclosure control. Differences are retained, not silently adjusted."
+}

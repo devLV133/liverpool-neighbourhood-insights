@@ -1,0 +1,169 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "visual013",
+  "position": {
+    "x": 25,
+    "y": 325,
+    "z": 13,
+    "width": 1230,
+    "height": 360,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Area shares and gaps to published Liverpool figures (pp)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#15333B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Neighbourhoods"
+                    }
+                  },
+                  "Property": "area_name"
+                }
+              },
+              "queryRef": "Neighbourhoods.area_name",
+              "nativeQueryRef": "area_name",
+              "displayName": "area name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Neighbourhoods"
+                    }
+                  },
+                  "Property": "Age 65+ share"
+                }
+              },
+              "queryRef": "Neighbourhoods.Age 65+ share",
+              "nativeQueryRef": "Age 65+ share",
+              "displayName": "Age 65+ share"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Neighbourhoods"
+                    }
+                  },
+                  "Property": "Age 65+ share gap to city (pp)"
+                }
+              },
+              "queryRef": "Neighbourhoods.Age 65+ share gap to city (pp)",
+              "nativeQueryRef": "Age 65+ share gap to city (pp)",
+              "displayName": "Age 65+ share gap to city (pp)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Neighbourhoods"
+                    }
+                  },
+                  "Property": "Social renting share"
+                }
+              },
+              "queryRef": "Neighbourhoods.Social renting share",
+              "nativeQueryRef": "Social renting share",
+              "displayName": "Social renting share"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Neighbourhoods"
+                    }
+                  },
+                  "Property": "Social renting share gap to city (pp)"
+                }
+              },
+              "queryRef": "Neighbourhoods.Social renting share gap to city (pp)",
+              "nativeQueryRef": "Social renting share gap to city (pp)",
+              "displayName": "Social renting share gap to city (pp)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Neighbourhoods"
+                    }
+                  },
+                  "Property": "Employment share (16+)"
+                }
+              },
+              "queryRef": "Neighbourhoods.Employment share (16+)",
+              "nativeQueryRef": "Employment share (16+)",
+              "displayName": "Employment share (16+)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Neighbourhoods"
+                    }
+                  },
+                  "Property": "Employment share (16+) gap to city (pp)"
+                }
+              },
+              "queryRef": "Neighbourhoods.Employment share (16+) gap to city (pp)",
+              "nativeQueryRef": "Employment share (16+) gap to city (pp)",
+              "displayName": "Employment share (16+) gap to city (pp)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

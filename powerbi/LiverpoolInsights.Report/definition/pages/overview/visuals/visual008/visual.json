@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "visual008",
+  "position": {
+    "x": 840,
+    "y": 420,
+    "z": 8,
+    "width": 415,
+    "height": 300,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {},
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "61 MSOAs on consistent 2021 boundaries. Employment includes students in work and all residents aged 16+. This is a historical baseline, not current service demand. Open reports/dashboard.html for the offline area map.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "16pt",
+                      "color": "#15333B"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

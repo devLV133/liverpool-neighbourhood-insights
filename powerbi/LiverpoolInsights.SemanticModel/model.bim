@@ -1,0 +1,391 @@
+{
+  "name": "LiverpoolInsights",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-GB",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-GB",
+    "expressions": [
+      {
+        "name": "DataFolder",
+        "kind": "m",
+        "expression": "\"C:/liverpool-neighbourhood-insights/data/processed\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "Neighbourhoods",
+        "columns": [
+          {
+            "name": "area_code",
+            "dataType": "string",
+            "sourceColumn": "area_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "area_name",
+            "dataType": "string",
+            "sourceColumn": "area_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "area_type",
+            "dataType": "string",
+            "sourceColumn": "area_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "population",
+            "dataType": "int64",
+            "sourceColumn": "population",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "aged_65_plus",
+            "dataType": "int64",
+            "sourceColumn": "aged_65_plus",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "households",
+            "dataType": "int64",
+            "sourceColumn": "households",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "social_rented",
+            "dataType": "int64",
+            "sourceColumn": "social_rented",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "residents_16_plus",
+            "dataType": "int64",
+            "sourceColumn": "residents_16_plus",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "employed",
+            "dataType": "int64",
+            "sourceColumn": "employed",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "aged_65_share",
+            "dataType": "double",
+            "sourceColumn": "aged_65_share",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "social_rented_share",
+            "dataType": "double",
+            "sourceColumn": "social_rented_share",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "employed_share",
+            "dataType": "double",
+            "sourceColumn": "employed_share",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "aged_65_city_gap_pp",
+            "dataType": "double",
+            "sourceColumn": "aged_65_city_gap_pp",
+            "summarizeBy": "none",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "social_rented_city_gap_pp",
+            "dataType": "double",
+            "sourceColumn": "social_rented_city_gap_pp",
+            "summarizeBy": "none",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "employed_city_gap_pp",
+            "dataType": "double",
+            "sourceColumn": "employed_city_gap_pp",
+            "summarizeBy": "none",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "aged_65_england_gap_pp",
+            "dataType": "double",
+            "sourceColumn": "aged_65_england_gap_pp",
+            "summarizeBy": "none",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "social_rented_england_gap_pp",
+            "dataType": "double",
+            "sourceColumn": "social_rented_england_gap_pp",
+            "summarizeBy": "none",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "employed_england_gap_pp",
+            "dataType": "double",
+            "sourceColumn": "employed_england_gap_pp",
+            "summarizeBy": "none",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "summarizeBy": "none",
+            "dataCategory": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "summarizeBy": "none",
+            "dataCategory": "Longitude"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Neighbourhoods",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/neighbourhoods.csv\"), [Delimiter=\",\", Columns=20, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Types = Table.TransformColumnTypes(Headers, {{\"area_code\", type text}, {\"area_name\", type text}, {\"area_type\", type text}, {\"population\", Int64.Type}, {\"aged_65_plus\", Int64.Type}, {\"households\", Int64.Type}, {\"social_rented\", Int64.Type}, {\"residents_16_plus\", Int64.Type}, {\"employed\", Int64.Type}, {\"aged_65_share\", type number}, {\"social_rented_share\", type number}, {\"employed_share\", type number}, {\"aged_65_city_gap_pp\", type number}, {\"social_rented_city_gap_pp\", type number}, {\"employed_city_gap_pp\", type number}, {\"aged_65_england_gap_pp\", type number}, {\"social_rented_england_gap_pp\", type number}, {\"employed_england_gap_pp\", type number}, {\"latitude\", type number}, {\"longitude\", type number}}, \"en-GB\")",
+                "in",
+                "    Types"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Age 65+ share",
+            "expression": "DIVIDE(SUM(Neighbourhoods[aged_65_plus]), SUM(Neighbourhoods[population]))",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Liverpool Age 65+ share",
+            "expression": "CALCULATE(MAX(Benchmarks[aged_65_share]), Benchmarks[area_code] = \"E08000012\")",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "England Age 65+ share",
+            "expression": "CALCULATE(MAX(Benchmarks[aged_65_share]), Benchmarks[area_code] = \"E92000001\")",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Age 65+ share gap to city (pp)",
+            "expression": "100 * ([Age 65+ share] - [Liverpool Age 65+ share])",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "Social renting share",
+            "expression": "DIVIDE(SUM(Neighbourhoods[social_rented]), SUM(Neighbourhoods[households]))",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Liverpool Social renting share",
+            "expression": "CALCULATE(MAX(Benchmarks[social_rented_share]), Benchmarks[area_code] = \"E08000012\")",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "England Social renting share",
+            "expression": "CALCULATE(MAX(Benchmarks[social_rented_share]), Benchmarks[area_code] = \"E92000001\")",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Social renting share gap to city (pp)",
+            "expression": "100 * ([Social renting share] - [Liverpool Social renting share])",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "Employment share (16+)",
+            "expression": "DIVIDE(SUM(Neighbourhoods[employed]), SUM(Neighbourhoods[residents_16_plus]))",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Liverpool Employment share (16+)",
+            "expression": "CALCULATE(MAX(Benchmarks[employed_share]), Benchmarks[area_code] = \"E08000012\")",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "England Employment share (16+)",
+            "expression": "CALCULATE(MAX(Benchmarks[employed_share]), Benchmarks[area_code] = \"E92000001\")",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Employment share (16+) gap to city (pp)",
+            "expression": "100 * ([Employment share (16+)] - [Liverpool Employment share (16+)])",
+            "formatString": "+0.0;-0.0;0.0"
+          },
+          {
+            "name": "Selected areas",
+            "expression": "COUNTROWS(Neighbourhoods)",
+            "formatString": "0"
+          }
+        ]
+      },
+      {
+        "name": "Benchmarks",
+        "columns": [
+          {
+            "name": "area_code",
+            "dataType": "string",
+            "sourceColumn": "area_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "area_name",
+            "dataType": "string",
+            "sourceColumn": "area_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "area_type",
+            "dataType": "string",
+            "sourceColumn": "area_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "population",
+            "dataType": "int64",
+            "sourceColumn": "population",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "aged_65_plus",
+            "dataType": "int64",
+            "sourceColumn": "aged_65_plus",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "households",
+            "dataType": "int64",
+            "sourceColumn": "households",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "social_rented",
+            "dataType": "int64",
+            "sourceColumn": "social_rented",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "residents_16_plus",
+            "dataType": "int64",
+            "sourceColumn": "residents_16_plus",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "employed",
+            "dataType": "int64",
+            "sourceColumn": "employed",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "aged_65_share",
+            "dataType": "double",
+            "sourceColumn": "aged_65_share",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "social_rented_share",
+            "dataType": "double",
+            "sourceColumn": "social_rented_share",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "employed_share",
+            "dataType": "double",
+            "sourceColumn": "employed_share",
+            "summarizeBy": "none",
+            "formatString": "0.0%"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Benchmarks",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/benchmarks.csv\"), [Delimiter=\",\", Columns=12, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Types = Table.TransformColumnTypes(Headers, {{\"area_code\", type text}, {\"area_name\", type text}, {\"area_type\", type text}, {\"population\", Int64.Type}, {\"aged_65_plus\", Int64.Type}, {\"households\", Int64.Type}, {\"social_rented\", Int64.Type}, {\"residents_16_plus\", Int64.Type}, {\"employed\", Int64.Type}, {\"aged_65_share\", type number}, {\"social_rented_share\", type number}, {\"employed_share\", type number}}, \"en-GB\")",
+                "in",
+                "    Types"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Context",
+        "columns": [
+          {
+            "name": "census_date",
+            "dataType": "dateTime",
+            "sourceColumn": "census_date",
+            "summarizeBy": "none",
+            "formatString": "dd MMM yyyy"
+          },
+          {
+            "name": "source_retrieved",
+            "dataType": "dateTime",
+            "sourceColumn": "source_retrieved",
+            "summarizeBy": "none",
+            "formatString": "dd MMM yyyy"
+          },
+          {
+            "name": "areas",
+            "dataType": "int64",
+            "sourceColumn": "areas",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Context",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(DataFolder & \"/context.csv\"), [Delimiter=\",\", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Types = Table.TransformColumnTypes(Headers, {{\"census_date\", type date}, {\"source_retrieved\", type date}, {\"areas\", Int64.Type}}, \"en-GB\")",
+                "in",
+                "    Types"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": []
+  }
+}

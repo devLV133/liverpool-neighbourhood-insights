@@ -1,0 +1,31 @@
+name: Validate analysis and report
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
+      - run: python analyse.py
+      - run: python tools/build_report.py
+      - run: python tools/build_powerbi.py
+      - run: python tools/build_sql_server.py
+      - run: git diff --exit-code -- data/processed reports powerbi sql docs/findings.md
+  report-controls:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test

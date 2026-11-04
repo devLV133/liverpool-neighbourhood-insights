@@ -1,0 +1,96 @@
+{
+  "retrieved_at": "2026-11-04T14:07:26.059845+00:00",
+  "census_date": "2021-03-21",
+  "area_type": "MSOA 2021",
+  "area_count": 61,
+  "city_code": "E08000012",
+  "country_code": "E92000001",
+  "files": {
+    "boundaries.geojson": {
+      "sha256": "986a68d0e908b133fb15c2c102df646f82cbe64515e42db653e1efc555046130",
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Middle_layer_Super_Output_Areas_December_2021_Boundaries_EW_BGC_V3/FeatureServer/0/query?where=MSOA21NM+LIKE+%27Liverpool+%25%27&outFields=MSOA21CD%2CMSOA21NM%2CBNG_E%2CBNG_N%2CLAT%2CLONG&outSR=4326&f=geojson&returnGeometry=true",
+      "publisher": "Office for National Statistics, Open Geography Portal",
+      "release": "MSOA December 2021 BGC V3 (July 2024 boundary maintenance)"
+    },
+    "ts007a.csv": {
+      "sha256": "061d4a85032d18215b1e7b1f75d64ec8fb760730375965913f7093c7b310b0e0",
+      "url": "https://www.nomisweb.co.uk/output/census/2021/census2021-ts007a.zip",
+      "publisher": "Office for National Statistics via Nomis",
+      "archive_sha256": "041e57fa6d3243fd622772767bba08ea64dece3d57de909f1fbcf675f888cad7",
+      "members": [
+        {
+          "member": "census2021-ts007a-msoa.csv",
+          "sha256": "ca940f7c15a15faa6af494a85ef164136948f4fbd8c5ef7070ae224c63050773",
+          "selected_rows": 61
+        },
+        {
+          "member": "census2021-ts007a-ltla.csv",
+          "sha256": "fb954e12e6c519598f277255886d7b7176684f32a14219535b05eca0fa052ec6",
+          "selected_rows": 1
+        },
+        {
+          "member": "census2021-ts007a-ctry.csv",
+          "sha256": "e68fa2352a77fd363108e31a54f28cebaeed265104aa74679f3eb16d07af37c0",
+          "selected_rows": 1
+        }
+      ],
+      "archive_metadata": {},
+      "dataset_page": "https://www.nomisweb.co.uk/datasets/c2021ts007a"
+    },
+    "ts054.csv": {
+      "sha256": "06b69bd7d42e462b20b651f4e716731acaaba9891ec6a1e312132527e096def5",
+      "url": "https://www.nomisweb.co.uk/output/census/2021/census2021-ts054.zip",
+      "publisher": "Office for National Statistics via Nomis",
+      "archive_sha256": "aa07311021776a93fdd7e8f6b3ad261b919305ef821ae68174fb1a66b85304c2",
+      "members": [
+        {
+          "member": "census2021-ts054-msoa.csv",
+          "sha256": "45ddfd6050a800cc2a2db1b68f66ef571749b97e9ee9e730d4d60fbac44486ef",
+          "selected_rows": 61
+        },
+        {
+          "member": "census2021-ts054-ltla.csv",
+          "sha256": "81484b4c45b6a8cb3d3781942916adbf31ae8958286893a94e489949dc403355",
+          "selected_rows": 1
+        },
+        {
+          "member": "census2021-ts054-ctry.csv",
+          "sha256": "ebc27ceec79c81377d46bb2b9f2240c93b9aeaaf0ee1c377af07328813d847ca",
+          "selected_rows": 1
+        }
+      ],
+      "archive_metadata": {
+        "metadata/ts054-2021-2.txt": "Title: Tenure\r\nDescription: This dataset provides Census 2021 estimates that classify households in England and Wales by tenure. The estimates are as at Census Day, 21 March 2021.\r\nIssued: 2023-01-06T00:00:00.000Z\r\nNext Release: \r\nIdentifier: Tenure\r\nKeywords: [ltla hh_tenure_9a]\r\nLanguage: English\r\nContact: Michael Roskams, census.customerservices@ons.gov.uk, +44 1329 444972\r\nLatest Changes: []\r\nPeriodicity: \r\nDistribution:\r\n\tExtension: xls\r\n\tSize: 77061\r\n\tURL: https://download.ons.gov.uk/downloads/datasets/TS054/editions/2021/versions/2.xlsx\r\n\r\n\tExtension: txt\r\n\tSize: 3964\r\n\tURL: https://download.ons.gov.uk/downloads/datasets/TS054/editions/2021/versions/2.txt\r\n\r\n\tExtension: csv\r\n\tSize: 184367\r\n\tURL: https://download.ons.gov.uk/downloads/datasets/TS054/editions/2021/versions/2.csv\r\n\r\n\tExtension: csvw\r\n\tSize: 2604\r\n\tURL: https://download.ons.gov.uk/downloads/datasets/TS054/editions/2021/versions/2.csv-metadata.json\r\n\r\nUnit of measure: Household\r\nLicense: \r\nCanonical Topic: \r\nSurvey: \r\nUsage Notes:\r\nVersion: 2\r\n\r\nArea Type\r\n\r\nCensus 2021 statistics are published for a number of different geographies.\r\nThese can be large, for example the whole of England, or small, for example\r\nan output area (OA), the lowest level of geography for which statistics are\r\nproduced.\r\n\r\nFor higher levels of geography, more detailed statistics can be produced.\r\nWhen a lower level of geography is used, such as output areas (which have\r\na minimum of 100 persons), the statistics produced have less detail. This is\r\nto protect the confidentiality of people and ensure that individuals or their\r\ncharacteristics cannot be identified.\r\n\r\n\r\nCoverage\r\n\r\nCensus 2021 statistics are published for the whole of England and Wales.\r\nHowever, you can choose to filter areas by:\r\n\r\n- country - for example, Wales\r\n- region - for example, London\r\n- local authority - for example, Cornwall\r\n- health area \u2013 for example, Clinical Commissioning Group\r\n- statistical area - for example, MSOA or LSOA\r\n\r\n\r\nProtecting personal data\r\n\r\nSometimes we need to make changes to data if it is possible to identify\r\nindividuals. This is known as statistical disclosure control.\r\n\r\nIn Census 2021, we:\r\n- swapped records (targeted record swapping), for example, if a household \r\n  was likely to be identified in datasets because it has unusual\r\n  characteristics, we swapped the record with a similar one from a nearby\r\n  small area (very unusual households could be swapped with one in a nearby\r\n  local authority)\r\n- added small changes to some counts (cell key perturbation), for example,\r\n  we might change a count of four to a three or a five \u2013 this might make\r\n  small differences between tables depending on how the data are broken down\r\n  when we applied perturbation\r\n\r\nRead more in Section 5 of our article Design for Census 2021.\r\n\r\nDimensions:\r\n\r\n\tID: ltla\r\n\r\n\tLabel: Lower Tier Local Authorities\r\n\r\n\tDescription: Lower tier local authorities provide a range of local services. In England there are 309 lower tier local authorities. These are made up of non-metropolitan districts (181), unitary authorities (59), metropolitan districts (36) and London boroughs (33, including City of London). In Wales there are 22 local authorities made up of 22 unitary authorities. Of these local authority types, only non-metropolitan districts are not additionally classified as upper tier local authorities.\r\n\r\n\tNumber Of Options: 331\r\n\r\n\tQuality Statement: \r\n\r\n\r\n\tID: hh_tenure_9a\r\n\r\n\tLabel: Tenure of household (9 categories)\r\n\r\n\tDescription: Whether a household owns or rents the accommodation that it occupies. \r\n\r\nOwner-occupied accommodation can be:\r\n\r\n* owned outright, which is where the household owns all of the accommodation \r\n* with a mortgage or loan \r\n* part-owned on a shared ownership scheme \r\n\r\n Rented accommodation can be:\r\n\r\n* private rented (for example, rented through a private landlord or letting agent \r\n* social rented through a local council or housing association\r\n\r\nThis information is not available for household spaces with no usual residents.\r\n\r\n\tNumber Of Options: 9\r\n\r\n\tQuality Statement: There is evidence of people incorrectly identifying their type of landlord as \u201dCouncil or local authority\u201d or \u201cHousing association\u201d. You should add these two categories together when analysing data that uses this variable.\r\nhttps://www.ons.gov.uk/peoplepopulationandcommunity/housing/methodologies/housingqualityinformationforcensus2021\r\n"
+      },
+      "dataset_page": "https://www.nomisweb.co.uk/datasets/c2021ts054"
+    },
+    "ts066.csv": {
+      "sha256": "42eedc6dfb0db80d8971ba3c58efa06dfbb8896fb23dafb7e635727f8595271a",
+      "url": "https://www.nomisweb.co.uk/output/census/2021/census2021-ts066.zip",
+      "publisher": "Office for National Statistics via Nomis",
+      "archive_sha256": "eb9d792d4b9d196b2e36ab558af2ad85f52f5f2f2643b3895b42cd4fad068d1a",
+      "members": [
+        {
+          "member": "census2021-ts066-msoa.csv",
+          "sha256": "50890fad1eb52fbe5d5896013c6d76fac75d2c69a384a2a04424427291eccd6f",
+          "selected_rows": 61
+        },
+        {
+          "member": "census2021-ts066-ltla.csv",
+          "sha256": "380b2f3900ef2539ed89fd97472895ecc1ada127dfddb83db003fe8a4e46e52c",
+          "selected_rows": 1
+        },
+        {
+          "member": "census2021-ts066-ctry.csv",
+          "sha256": "1c9c56a30452bcc5c9a4a71a70a4fbd223fbccefc0ec007f69affd50232a6181",
+          "selected_rows": 1
+        }
+      ],
+      "archive_metadata": {
+        "metadata/ts066-2021-1.txt": "Title: Economic activity status\r\nDescription: This dataset provides Census 2021 estimates that classify usual residents aged 16 years and over in England and Wales by economic activity status. The estimates are as at Census Day, 21 March 2021.\r\nIssued: 2022-12-08T00:00:00.000Z\r\nNext Release: \r\nIdentifier: Economic activity status\r\nKeywords: [ltla economic_activity]\r\nLanguage: English\r\nContact: Michael Roskams, census.customerservices@ons.gov.uk, +44 1329 444972\r\nLatest Changes: []\r\nPeriodicity: \r\nDistribution:\r\n\tExtension: csvw\r\n\tSize: 2978\r\n\tURL: https://download.ons.gov.uk/downloads/datasets/TS066/editions/2021/versions/1.csv-metadata.json\r\n\r\n\tExtension: xls\r\n\tSize: 144010\r\n\tURL: https://download.ons.gov.uk/downloads/datasets/TS066/editions/2021/versions/1.xlsx\r\n\r\n\tExtension: txt\r\n\tSize: 4201\r\n\tURL: https://download.ons.gov.uk/downloads/datasets/TS066/editions/2021/versions/1.txt\r\n\r\n\tExtension: csv\r\n\tSize: 755509\r\n\tURL: https://download.ons.gov.uk/downloads/datasets/TS066/editions/2021/versions/1.csv\r\n\r\nUnit of measure: Person\r\nLicense: \r\nNational Statistic: false\r\nCanonical Topic: \r\nSurvey: \r\nUsage Notes:\r\nVersion: 1\r\n\r\nArea Type\r\n\r\nCensus 2021 statistics are published for a number of different geographies.\r\nThese can be large, for example the whole of England, or small, for example\r\nan output area (OA), the lowest level of geography for which statistics are\r\nproduced.\r\n\r\nFor higher levels of geography, more detailed statistics can be produced.\r\nWhen a lower level of geography is used, such as output areas (which have\r\na minimum of 100 persons), the statistics produced have less detail. This is\r\nto protect the confidentiality of people and ensure that individuals or their\r\ncharacteristics cannot be identified.\r\n\r\n\r\nCoverage\r\n\r\nCensus 2021 statistics are published for the whole of England and Wales.\r\nHowever, you can choose to filter areas by:\r\n\r\n- country - for example, Wales\r\n- region - for example, London\r\n- local authority - for example, Cornwall\r\n- health area \u2013 for example, Clinical Commissioning Group\r\n- statistical area - for example, MSOA or LSOA\r\n\r\n\r\nProtecting personal data\r\n\r\nSometimes we need to make changes to data if it is possible to identify\r\nindividuals. This is known as statistical disclosure control.\r\n\r\nIn Census 2021, we:\r\n- swapped records (targeted record swapping), for example, if a household \r\n  was likely to be identified in datasets because it has unusual\r\n  characteristics, we swapped the record with a similar one from a nearby\r\n  small area (very unusual households could be swapped with one in a nearby\r\n  local authority)\r\n- added small changes to some counts (cell key perturbation), for example,\r\n  we might change a count of four to a three or a five \u2013 this might make\r\n  small differences between tables depending on how the data are broken down\r\n  when we applied perturbation\r\n\r\nRead more in Section 5 of our article Design for Census 2021.\r\n\r\nDimensions:\r\n\r\n\tID: ltla\r\n\r\n\tLabel: Lower Tier Local Authorities\r\n\r\n\tDescription: Lower tier local authorities provide a range of local services. In England there are 309 lower tier local authorities. These are made up of non-metropolitan districts (181), unitary authorities (59), metropolitan districts (36) and London boroughs (33, including City of London). In Wales there are 22 local authorities made up of 22 unitary authorities. Of these local authority types, only non-metropolitan districts are not additionally classified as upper tier local authorities.\r\n\r\n\tNumber Of Options: 331\r\n\r\n\tQuality Statement: \r\n\r\n\r\n\tID: economic_activity\r\n\r\n\tLabel: Economic activity status (20 categories)\r\n\r\n\tDescription: People aged 16 years and over are economically active if, between 15 March and 21 March 2021, they were:\r\n\r\n* in employment (an employee or self-employed)\r\n* unemployed, but looking for work and could start within two weeks\r\n* unemployed, but waiting to start a job that had been offered and accepted\r\n\r\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\r\n\r\nThe census definition differs from International Labour Organization definition used on the Labour Force Survey, so estimates are not directly comparable.\r\n\r\n\tNumber Of Options: 20\r\n\r\n\tQuality Statement: As Census 2021 was during a unique period of rapid change, take care when using this data for planning purposes.\r\nRead more in our Labour market quality information for Census 2021 methodology.\r\n"
+      },
+      "dataset_page": "https://www.nomisweb.co.uk/datasets/c2021ts066"
+    }
+  },
+  "note": "CSV extracts retain original headers and counts for 61 MSOAs plus Liverpool LTLA and England. National archives are not redistributed."
+}
